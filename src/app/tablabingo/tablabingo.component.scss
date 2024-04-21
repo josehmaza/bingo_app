@@ -1,0 +1,82 @@
+.letras {
+  display: flex;
+  background: rgb(32, 219, 219);
+  border: 1px solid black;
+  border-radius: 0.5em 0.5em 0 0;
+}
+
+.letra {
+  width: 2.2em;
+  text-align: center;
+  height: 2em;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #3a3a3a;
+  border-right: 0.5px solid black;
+  border-left: 0.5px solid black;
+}
+.fila-numeros {
+  display: flex;
+}
+.columna-numeros {
+  display: flex;
+  flex-direction: column;
+}
+.numero-bingo {
+  width: 2.2em;
+  text-align: center;
+    height: 2em;
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+    color: #2f2f2f;
+    font-weight: bold;
+    color: rgb(44, 44, 44);
+}
+.container-table{
+  display: inline flex;
+  flex-direction: column;
+  margin: 0.1em;
+}
+.numeros {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  display: flex;
+
+}
+.central  {
+  background: #a7a5a5;
+}
+
+.checked {
+  background: #ff6c6c;
+}
+
+
+.codigo-tabla {
+  background: #b5b5b5;
+  clip-path: polygon(0% 0%, 34% 0, 48% 100%, 24% 100%, 0% 100%);
+  margin-left: 4px;
+  padding-left: 4px;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+
+.last {
+  animation: last-number 2s infinite; /* Animación con duración de 2 segundos y repetición infinita */
+}
+
+@keyframes last-number {
+  0% {
+    background-color: #f42d58; /* Color inicial: amarillo */
+  }
+  50% {
+    background-color: #a4bcff; /* Color intermedio 1: azul */
+  }
+  100% {
+    background-color: #f42d58; /* Regresa al color inicial */
+  }
+}

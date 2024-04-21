@@ -1,0 +1,61 @@
+<div class="container-table">
+  <div class="codigo-tabla">
+    {{codigo}}
+  </div>
+  <div class="tabla">
+    <div class="letras">
+      <div class="letra ">
+        B
+      </div>
+      <div class="letra">
+        I
+      </div>
+      <div class="letra">
+        N
+      </div>
+      <div class="letra">
+        G
+      </div>
+      <div class="letra">
+        O
+      </div>
+    </div>
+    <div class="numeros">
+      <div class="columna-numeros">
+        <div class="numero-bingo"  [ngClass]="{'checked': numeroBingo.state === STATE_NUMERO_TYPO.CHECK}" *ngFor="let numeroBingo of numerosBingoOrdenado?.B">
+          {{numeroBingo.numero}}
+        </div>
+      </div>
+      <div class="columna-numeros">
+        <div class="numero-bingo" [ngClass]="{'checked': numeroBingo.state === STATE_NUMERO_TYPO.CHECK}" *ngFor="let numeroBingo of numerosBingoOrdenado?.I">
+          {{numeroBingo.numero}}
+        </div>
+      </div>
+      <div class="columna-numeros">
+        <ng-container *ngFor="let numeroBingo of numerosBingoOrdenado?.N">
+          <div class="numero-bingo" [ngClass]="{'last': numeroBingo.isLast, 'checked': numeroBingo.state === STATE_NUMERO_TYPO.CHECK}" >
+            <ng-content *ngIf="numeroBingo.state == STATE_NUMERO_TYPO.CENTRAL ;then thenBlock else elseBlock">
+            </ng-content>
+            <ng-template #thenBlock>😀</ng-template>
+            <ng-template #elseBlock>{{numeroBingo.numero}}</ng-template>
+          </div>
+        </ng-container>
+       
+      </div>
+      
+      <div class="columna-numeros">
+        <div class="numero-bingo"  *ngFor="let numeroBingo of numerosBingoOrdenado?.G">
+         {{numeroBingo.numero}}
+       
+        </div>
+      </div>
+      <div class="columna-numeros">
+        <div class="numero-bingo"  *ngFor="let numeroBingo of numerosBingoOrdenado?.O">
+          {{numeroBingo.numero}}
+        </div>
+      </div>
+
+    </div>
+  
+  </div>
+</div>

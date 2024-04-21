@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="hojas">
+    <div class="hoja" *ngFor="let hoja of bingoService.hojas;">
+      <div>
+        <label for="">Nombre de hoja: {{hoja.nombre}}</label>
+      </div>
+      <app-tablabingo [numerosBingo]="tabla.numeros" [codigo]="tabla.codigo" *ngFor="let tabla of hoja.tablasDeBingo"></app-tablabingo>
+    </div>
+   
+  </div>
+</div>

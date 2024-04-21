@@ -1,0 +1,83 @@
+<div>
+  <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+    <li [ngbNavItem]="1">
+
+     
+
+
+      <button ngbNavLink>BINGO</button>
+      <ng-template ngbNavContent>
+
+        <div class="card">
+          <div class="card-header">
+            JUGADAS
+          </div>
+          <div class="card-body">
+            <div id="jugadas">
+              <span class="badge text-bg-success" *ngFor="let jugada of bingoService.jugadasARealizar;">
+              {{jugada}}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div id="container-btn-estados">
+          <button type="button" class="btn btn-primary" (click)="iniciar()" [disabled]="bingoService.estado == BINGO_ESTADO_TYPO.INICIADO">INICIAR</button>
+          <button type="button" class="btn btn-danger">FINALIZAR</button>
+
+        </div>
+
+        <div class="container-bolas-ultimas">
+          <div class="ultimabola">
+            <div class="centro-ultimabola">
+              {{bingoService.historialNumeros[bingoService.historialNumeros.length-1]}}
+            </div>
+          </div>
+          <div class="ultimasbolas">
+            <div class="centro-ultimasbolas">
+              {{bingoService.historialNumeros[bingoService.historialNumeros.length-2]}}
+            </div>
+            </div>
+          <div class="ultimasbolas"> 
+            <div class="centro-ultimasbolas">
+            {{bingoService.historialNumeros[bingoService.historialNumeros.length-3]}}
+          </div></div>
+          <div class="ultimasbolas">
+            <div class="centro-ultimasbolas">
+              {{bingoService.historialNumeros[bingoService.historialNumeros.length-4]}}
+            </div></div>
+        </div>
+
+        <app-tablero-bolas />
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+      <button ngbNavLink>CONFIGURACION</button>
+      <ng-template ngbNavContent>
+        <p>
+          Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
+          farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
+          ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
+          helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson
+          8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
+          stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+        </p>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="3">
+      <button ngbNavLink>TABLAS</button>
+      <ng-template ngbNavContent>
+        <div class="opciones">
+          <button type="button" class="btn btn btn-outline-primary btn-sm" (click)="crearHoja()">Crear HOJA</button>
+          <button type="button" class="btn btn btn-outline-primary btn-sm" (click)="reset()">RESET(ELimina todas las hojas)</button>
+          <button class="btn"><i class="fa fa-home"></i>xxx</button>
+        </div>
+         <app-visor-bingos ></app-visor-bingos>
+      
+      </ng-template>
+    </li>
+  </ul>
+
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+  <pre>Active: {{ active }}</pre>
+</div>

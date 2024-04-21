@@ -1,0 +1,42 @@
+
+<div class="container-bolas">
+
+  <div class="fila border-bottom" id="filaB">
+    <div class="letter letterb">
+      B
+    </div>
+    <div class="numeros-bolas">
+      <app-bola [estado]="bola.estado" [numero]="bola.numero" *ngFor="let bola of numerosBingo.B;" ></app-bola>
+    </div>
+  </div>
+  <div class="fila border-bottom" id="filaI">
+    <div class="letter letteri">
+      I
+    </div>
+    <div class="numeros-bolas">
+      <app-bola [estado]="bola.estado" [numero]="bola.numero" *ngFor="let bola of numerosBingo.I;" ></app-bola>
+    </div>  </div>
+  <div class="fila border-bottom" id="filaN">
+    <div class="letter lettern">
+      N
+    </div>
+    <div class="numeros-bolas">
+      <app-bola  [estado]="bola.estado" [numero]="bola.numero" *ngFor="let bola of numerosBingo.N;" ></app-bola>
+    </div>  </div>
+  <div class="fila border-bottom" id="filaG">
+    <div class="letter letterg">
+      G
+    </div>
+    <div class="numeros-bolas">
+      <app-bola [estado]="bola.estado" [numero]="bola.numero" *ngFor="let bola of numerosBingo.G;" ></app-bola>
+    </div>  </div>
+  <div class="fila border-bottom" id="filaO">
+    <div class="letter lettero">
+      O
+    </div>
+    <div class="numeros-bolas">
+      <app-bola [estado]="bola.estado" [numero]="bola.numero" *ngFor="let bola of numerosBingo.O;" ></app-bola>
+    </div>  </div>
+</div>
+
+

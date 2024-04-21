@@ -1,0 +1,42 @@
+.fila {
+  display: flex;
+  align-items: center;
+
+}
+
+.letter {
+ 
+  width: 3em;
+  height: 2em;
+  margin: 0;
+  padding: 0;
+  border-radius: 0.2em;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.letterb{
+  background: red;
+}
+.letteri{
+  background: yellow;
+}
+.lettern{
+  background: green;
+}
+.letterg{
+  background: blue;
+}
+.lettero{
+  background: purple;
+}
+.numeros-bolas{
+  display: flex;
+    flex-wrap: wrap;
+
+}
+.container-bolas{
+  border: 1px solid gray;
+  border-radius: 1em;
+}
