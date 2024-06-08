@@ -12,8 +12,31 @@
   margin: 1px;
 }
 .check{
-  background: rgb(208, 156, 16);
+ //background: #2196F3;
+ background-image: radial-gradient(circle at 46.93% 14.93%, #34fcff 0, #2096f3 50%, #013d6a 100%);
+   color: white;
 }
 .uncheck{
-  background: rgb(30, 120, 193);
+  background-color: #f5f5f5
+}
+
+
+.bingo-ball {
+  cursor: pointer;
+  margin: 1px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.7em; /* Adjust as needed */
+  height: 2.7em; /* Adjust as needed */
+  border-radius: 50%; /* Create a circular shape */
+ // background-color: #f5f5f5; /* Light gray background */
+  box-shadow: 0 2px 5px rgb(0 0 0 / 59%);
+}
+
+.bingo-ball .number {
+  font-size: 1.4em; /* Adjust font size as needed */
+  font-weight: bold;
+  //color: #333; /* Dark gray text */
 }

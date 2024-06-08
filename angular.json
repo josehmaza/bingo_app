@@ -30,6 +30,9 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/cdk/overlay-prebuilt.css",
+          "node_modules/@perfectmemory/ngx-contextmenu/src/assets/stylesheets/base.scss",
+              "node_modules/font-awesome/css/font-awesome.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -93,6 +96,9 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/cdk/overlay-prebuilt.css",
+            "node_modules/@perfectmemory/ngx-contextmenu/src/assets/stylesheets/base.scss",
+              "node_modules/font-awesome/css/font-awesome.css",
               "src/styles.scss"
             ],
             "scripts": []

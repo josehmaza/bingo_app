@@ -1,0 +1,35 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Crear tabla de Bingo</h4>
+ 
+  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">TIPO DE TABLA :</label>
+  
+    <select  [(ngModel)]="typeBingoSelected" class="form-select" aria-label="Default select example">
+      <option *ngFor="let typeBingo of typeBingos" [ngValue]="typeBingo.value" >
+        {{ typeBingo.id }}
+      </option>
+    </select>
+  </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Codigo de tabla de bingo :</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="codigoTabla">
+    </div>
+ 
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Ingrese los numeros de la tabla:</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="numerosBingo"  (ngModelChange)="onKeypress($event)">
+      <textarea [value]="bingoGenerated" (input)="onValueChangetxtA($event)" rows="7"  disabled cols ="23" class="form-control"></textarea>
+      <div class="row">
+        <span class="text-bg-info mini-message" *ngIf="isBingoValid">{{messageBingoValid}}</span>
+        <span class="text-bg-danger mini-message" *ngIf="!isBingoValid" >{{messageBingoValid}}</span>
+
+      </div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary" (click)="passBack()">Guardar</button>
+
+</div>

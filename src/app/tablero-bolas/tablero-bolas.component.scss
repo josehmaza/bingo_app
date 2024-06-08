@@ -17,19 +17,19 @@
   font-size: 1.2em;
 }
 .letterb{
-  background: red;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 60, 135, 0.65) 0%, rgba(187, 7, 7, 1) 100%);
 }
 .letteri{
-  background: yellow;
+  background: radial-gradient(circle at 50% 50%, rgba(60, 255, 67, 0.52) 0%, rgba(0, 255, 0, 1) 100%);
 }
 .lettern{
-  background: green;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 205, 60, 0.52) 0%, rgba(255, 174, 0, 1) 100%);
 }
 .letterg{
-  background: blue;
+  background: radial-gradient(circle at 50% 50%, rgba(60, 61, 255, 0.69) 0%, rgba(0, 1, 255, 1) 100%);
 }
 .lettero{
-  background: purple;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 60, 248, 0.52) 0%, rgba(255, 0, 236, 1) 100%);
 }
 .numeros-bolas{
   display: flex;
@@ -39,4 +39,6 @@
 .container-bolas{
   border: 1px solid gray;
   border-radius: 1em;
+  padding: 0.1em;
+  margin: 0.1em;
 }

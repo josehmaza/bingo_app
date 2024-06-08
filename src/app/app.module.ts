@@ -16,6 +16,26 @@ import { BolaComponent } from './bola/bola.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalConfJugadasComponent } from './modal-conf-jugadas/modal-conf-jugadas.component';
 import { VisorBingosComponent } from './visor-bingos/visor-bingos.component';
+import { ContextMenuModule } from '@perfectmemory/ngx-contextmenu';
+import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { ClipboardModule } from '@angular/cdk/clipboard'
+import { ToastsContainer } from './components/toast/toas-container.component';
+import { ModalCreateTablaBingoComponent } from './modal-create-tabla-bingo/modal-create-tabla-bingo.component';
+import { DBConfig, NgxIndexedDBModule } from 'ngx-indexed-db';
+import { NumeroBingoPipe } from './pipes/numeroBingoPipes';
+
+const dbConfig: DBConfig  = {
+  name: 'BINGOS-APP',
+  version: 1,
+  objectStoresMeta: [{
+    store: 'hojas',
+    storeConfig: { keyPath: 'id', autoIncrement: true },
+    storeSchema: [
+      { name: 'name', keypath: 'name', options: { unique: false } },
+      { name: 'email', keypath: 'email', options: { unique: false } }
+    ]
+  }]
+};
 
 @NgModule({
   declarations: [
@@ -32,15 +52,23 @@ import { VisorBingosComponent } from './visor-bingos/visor-bingos.component';
     BolaComponent,
     ModalConfJugadasComponent,
     VisorBingosComponent,
+    ConfirmDialogComponent,
+    ToastsContainer,
+    ModalCreateTablaBingoComponent,
+    NumeroBingoPipe
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    ContextMenuModule,
+    ClipboardModule,
+    NgxIndexedDBModule.forRoot(dbConfig)
   ],
   providers: [],
-  bootstrap: [AppComponent] 
+  bootstrap: [AppComponent] ,
+  
 })
 export class AppModule { }

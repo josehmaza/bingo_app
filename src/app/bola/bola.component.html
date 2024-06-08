@@ -1,2 +1,4 @@
 
-<button  class="bola" (click)="cambiarEstadoBola()" [ngClass]="{'check': estado === STATE_NUMERO_TYPE.CHECK, 'uncheck': estado === STATE_NUMERO_TYPE.UNCHECK}">{{numero}} </button>
+<div  class="bingo-ball" (click)="cambiarEstadoBola()" [ngClass]="{'check': estado === STATE_NUMERO_TYPE.CHECK, 'uncheck': estado === STATE_NUMERO_TYPE.UNCHECK}">
+  <span class="number"> {{numero}}</span>
+  </div>

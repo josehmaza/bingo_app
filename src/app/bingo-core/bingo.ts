@@ -1,5 +1,6 @@
 import { LETTER_BINGO, STATE_NUMERO, TIPO_JUEGO, TYPE_BINGO } from './enums';
 import { ConfBINGO } from './interfaces';
+import { Probabilidad } from './models/probabilidad';
 import { NumeroBingo } from './numeroBingo';
 import { INDICESBINGO, INDICES_FRIENDLY_BINGO } from './tipoJuego';
 
@@ -8,6 +9,7 @@ export class Bingo {
   codigo: string = '';
   numeros: NumeroBingo[] = [];
   private _bingoJugadas: TIPO_JUEGO[] = [];
+  probalidades: Probabilidad[] = []
   /*letraB: NumeroBingo[] = [];
   letraI: NumeroBingo[] = [];
   letraN: NumeroBingo[] = [];
@@ -39,6 +41,25 @@ export class Bingo {
     this._bingoJugadas = jugadas;
   }
   sample() {}
+
+  toString(): string{
+    let allText=''
+    if (this.typeBingo == TYPE_BINGO.MINI) {
+      this.numeros.forEach((numero: NumeroBingo) => {
+        console.log(`(${numero})`);
+      });
+    } else {
+      allText+=`B\t I\t N\t G\t O\n`;
+      for (let i = 0; i < 5; i++) {
+        allText+=
+          `${!!this.numeros[i]? this.numeros[i]:'-'}\t${!!this.numeros[i + 5]? this.numeros[i + 5]: '-'}\t${
+            !!this.numeros[i + 10]? this.numeros[i + 10]:'-'
+          }\t${!!this.numeros[i + 15]?this.numeros[i + 15]:'-'}\t${!!this.numeros[i + 20]?this.numeros[i + 20]:'-'}\n`
+        ;
+      }
+    }
+    return allText
+  }
   print() {
     console.log('CODIGO DE TABLA: ' + this.codigo);
     if (this.typeBingo == TYPE_BINGO.MINI) {
@@ -87,9 +108,10 @@ export class Bingo {
         return;
       }
       //si es -1 entonces es vacio
-      if (numero == '-1') {
+      if (numero == '+' || numero == '-1') {
+        debugger
         this.numeros.push(
-          new NumeroBingo(-1, STATE_NUMERO.EMPTY, LETTER_BINGO.G, '-1')
+          new NumeroBingo(-1, STATE_NUMERO.EMPTY, LETTER_BINGO.EMPTY, '-1')
         );
         return;
       }
@@ -233,5 +255,34 @@ export class Bingo {
       codigo: this.codigo,
       numeros: this.numeros.map((numero) => numero.numero),
     };
+  }
+
+  /**
+   * Esto es verificar que todos los numeros esten llenos
+   * @param jugada 
+   * @param jugadas 
+   * @returns 
+   */
+  verificarBingo(jugada: TIPO_JUEGO, jugadas: any):boolean{
+  //  console.log('SIN forma de verificar bingo')
+    let isBingo: boolean = false;
+    let existeALgunUncheck = this.numeros.find((number: NumeroBingo) => {
+      return number.state === STATE_NUMERO.UNCHECK;
+    });
+    debugger;
+    if (!existeALgunUncheck) {
+      isBingo = true;
+
+     /* if (tabla.typeBingo == TYPE_BINGO.NUMERO) {
+        tabla.agregarBingo(TIPO_JUEGO.NUMERO);
+      }
+      if (tabla.typeBingo == TYPE_BINGO.SIGNO) {
+        tabla.agregarBingo(TIPO_JUEGO.SIGNO);
+      }*/
+      //if (tabla.typeBingo == TYPE_BINGO.MINI) {
+        this.agregarBingo(jugada);
+     // }
+    }
+    return isBingo;
   }
 }

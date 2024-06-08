@@ -49,7 +49,7 @@ export class TableroBolasComponent {
     for (let i = inicio; i <= fin; i++) {
       numeros.push({
         numero: i,
-        estado: this.bingoService.historialNumeros.find(numeroh => numeroh=== i)!!? STATE_NUMERO.CHECK: STATE_NUMERO.UNCHECK
+        estado: this.bingoService.historialNumeros.find(numeroh => numeroh.numero=== i)!!? STATE_NUMERO.CHECK: STATE_NUMERO.UNCHECK
       });
     }
     

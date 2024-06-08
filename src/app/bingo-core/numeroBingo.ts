@@ -26,6 +26,9 @@ export class NumeroBingo {
     if (this.state == STATE_NUMERO.CENTRAL) {
       return '😊';
     }
+    if (this.numero === -1) {
+      return '+';
+    }
     return `${this.numero}${this.state == STATE_NUMERO.CHECK ? '✓' : ''}`;
   }
   /* toJSON(): object {

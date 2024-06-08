@@ -12,7 +12,10 @@ export class HojaDeBingo {
    * numeros separados por coma..
    * el numero central va como 0
    */
-  crearTabla(codigoTabla: string, numeros: string, tipo: TYPE_BINGO, configuracion?: ConfBINGO): Bingo {
+  crearTabla(bingo: Bingo){
+    this.tablasDeBingo.push(bingo)
+  }
+  /*crearTablaDeprecated(codigoTabla: string, numeros: string, tipo: TYPE_BINGO, configuracion?: ConfBINGO): Bingo {
     let bingo: Bingo = new Bingo(tipo, codigoTabla);
     numeros.split(',').forEach((numero) => {
       bingo.addNumero(numero);
@@ -22,7 +25,7 @@ export class HojaDeBingo {
       bingo.configuracion = configuracion;
     }
     return bingo;
-  }
+  }*/
   print() {
     console.log('======== START HOJA =====');
 

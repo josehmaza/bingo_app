@@ -38,6 +38,8 @@
   display: inline flex;
   flex-direction: column;
   margin: 0.1em;
+  -webkit-user-select: none;
+    user-select: none;
 }
 .numeros {
   border-left: 1px solid black;
@@ -53,20 +55,28 @@
 .checked {
   background: #ff6c6c;
 }
-
+.header-table-info{
+  display: flex;
+}
 
 .codigo-tabla {
   background: #b5b5b5;
-  clip-path: polygon(0% 0%, 34% 0, 48% 100%, 24% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 74% 0, 100% 100%, 24% 100%, 0% 100%);
+  
   margin-left: 4px;
   padding-left: 4px;
   font-weight: bold;
   font-size: 0.8em;
+  width: 60%;
 }
 
 
 .last {
   animation: last-number 2s infinite; /* Animación con duración de 2 segundos y repetición infinita */
+}
+.isBingo{
+  animation: is-bingo 2s infinite; /* Animación con duración de 2 segundos y repetición infinita */
+
 }
 
 @keyframes last-number {
@@ -80,3 +90,18 @@
     background-color: #f42d58; /* Regresa al color inicial */
   }
 }
+
+
+@keyframes is-bingo {
+  0% {
+    background-color: #f42d58; /* Color inicial: amarillo */
+  }
+  50% {
+    background-color: #a4bcff; /* Color intermedio 1: azul */
+  }
+  100% {
+    background-color: #f42d58; /* Regresa al color inicial */
+  }
+}
+
+

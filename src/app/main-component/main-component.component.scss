@@ -50,3 +50,75 @@
   border-radius: 2em;
   font-size: 1.5em;
 }
+
+.opciones {
+  margin-bottom: 0.5em;
+}
+
+.jugadas-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+.jugadachk{
+  margin: 1em;
+}
+.container-all-bingo {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+.item-bingo{
+  margin-top: 0.4em
+}
+
+/*
+BOLA ULTIMA
+*/
+.bola-superior{
+  display: flex;
+  width: 80px;
+  height: 80px;
+  justify-content: center; 
+ align-items: center;
+
+}
+.bola-superior > .bola-intermedia {
+  background: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 4em;
+  display: flex;
+  justify-content: center; 
+ align-items: center;
+  
+}
+
+
+.contenido-bola {
+  background-color: white;
+  margin: 0;
+  padding: 0.1em;
+  width: 55px;
+  height: 55px;
+  border-radius: 4em;
+ /* border: 4px solid green;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contenido-bola > .bola-numero {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.contenido-bola > .bola-letter{
+  font-weight: bold;
+}
+.color-b-gradient{
+ background-image: radial-gradient(circle at 46.93% 14.93%, #34fcff 0, #2096f3 50%, #013d6a 100%); 
+  border-radius: 6em;
+}
+.border-b{
+ border: 4px solid #2096f3;
+}
